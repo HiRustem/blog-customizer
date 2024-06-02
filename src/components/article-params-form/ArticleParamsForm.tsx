@@ -2,6 +2,7 @@ import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
 
 import styles from './ArticleParamsForm.module.scss';
+<<<<<<< HEAD
 import { SetStateAction, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
@@ -49,32 +50,21 @@ export const ArticleParamsForm = ({ currentSettings, setCurrentSettings }: Artic
 
 		setCurrentSettings(formState)
 	}
+=======
+>>>>>>> parent of bbc0e29 (первый коммит)
 
+export const ArticleParamsForm = () => {
 	return (
-		<div ref={rootRef}>
-			<ArrowButton isOpen={isOpen} toggle={toggleVisible} />
-			<aside className={clsx(styles.container, isOpen && styles.container_open)}>
-				<form className={styles.form} onSubmit={handleSubmit}>
-					<Text children='Задайте параметры' as='h2' size={31} weight={800} uppercase={true} />
-
-					<Select selected={formState.fontFamilyOption} onChange={handleSelect('fontFamilyOption')} options={fontFamilyOptions} title='Шрифт' />
-
-					<RadioGroup name='radio' selected={formState.fontSizeOption} onChange={handleSelect('fontSizeOption')} options={fontSizeOptions} title='Размер шрифта' />
-
-					<Select selected={formState.fontColor} onChange={handleSelect('fontColor')} options={fontColors} title='Цвет шрифта' />
-
-					<Separator />
-
-					<Select selected={formState.backgroundColor} onChange={handleSelect('backgroundColor')} options={backgroundColors} title='Цвет фона' />
-
-					<Select selected={formState.contentWidth} onChange={handleSelect('contentWidth')} options={contentWidthArr} title='Ширина контента' />
-
+		<>
+			<ArrowButton />
+			<aside className={styles.container}>
+				<form className={styles.form}>
 					<div className={styles.bottomContainer}>
-						<Button title='Сбросить' type='reset' onClick={handleReset} />
+						<Button title='Сбросить' type='reset' />
 						<Button title='Применить' type='submit' />
 					</div>
 				</form>
 			</aside>
-		</div>
+		</>
 	);
 };
