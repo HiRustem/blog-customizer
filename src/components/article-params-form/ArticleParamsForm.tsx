@@ -41,6 +41,7 @@ export const ArticleParamsForm = ({ currentSettings, setCurrentSettings }: Artic
 
 	const handleReset = () => {
 		setFormState(defaultArticleState)
+		setCurrentSettings(defaultArticleState)
 	}
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
